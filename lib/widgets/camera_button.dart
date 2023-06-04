@@ -4,7 +4,7 @@ import 'package:foodie/utils/colors.dart';
 class CameraButton extends StatelessWidget {
   final Function() pickImageFromCamera;
 
-  const CameraButton({required this.pickImageFromCamera});
+  const CameraButton({super.key, required this.pickImageFromCamera});
 
   @override
   Widget build(BuildContext context) {

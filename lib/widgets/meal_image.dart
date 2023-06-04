@@ -5,7 +5,7 @@ import 'package:foodie/utils/colors.dart';
 class MealImage extends StatelessWidget {
   final File? image;
 
-  const MealImage({this.image, required double width, required double height});
+  const MealImage({super.key, this.image, required double width, required double height});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class MealImage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(2),
+              padding: const EdgeInsets.all(2),
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
@@ -51,7 +51,7 @@ class MealImage extends StatelessWidget {
                   width: 20,
                 ),
               ),
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 radius: 100,
                 backgroundColor: ColorsPalette.secondaryColor,
               ),

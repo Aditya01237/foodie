@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/utils/colors.dart';
 
-class lastPage extends StatelessWidget {
-  const lastPage({Key? key}) : super(key: key);
+class LastPage extends StatelessWidget {
+  const LastPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

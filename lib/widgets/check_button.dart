@@ -3,10 +3,10 @@ import 'package:foodie/utils/colors.dart';
 import '../Screens/message.dart';
 
 class CheckButton extends StatelessWidget {
-  final uploadImageToFirebase;
+  final dynamic uploadImageToFirebase;
   final dynamic image;
 
-  const CheckButton({
+  const CheckButton({super.key,
     required this.uploadImageToFirebase,
     required this.image,
   });
@@ -45,7 +45,7 @@ class CheckButton extends StatelessWidget {
               // Image uploaded successfully
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const lastPage()),
+                MaterialPageRoute(builder: (context) => const LastPage()),
               );
             } else {
               // Handle error uploading image

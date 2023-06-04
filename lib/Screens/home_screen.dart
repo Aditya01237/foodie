@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodie/Screens/takePicture.dart';
+import 'package:foodie/Screens/share_meal_page.dart';
 import 'package:foodie/utils/colors.dart';
 
 class HomeScreen extends StatelessWidget {

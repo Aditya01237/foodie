@@ -59,18 +59,15 @@ class _ShareMealPageState extends State<ShareMealPage> {
     final maxWidth = screenSize.width;
     final maxHeight = screenSize.height;
 
-    final smallSpacing;
+    final double smallSpacing;
 
-    print("height is " + "${maxHeight}");
+    // print("height is " "$maxHeight");
 
-    if(maxHeight < 810)
-      {
-        smallSpacing = maxHeight * 0.001;
-      }
-    else
-      {
-        smallSpacing = maxHeight * 0.02;
-      }
+    if (maxHeight < 810) {
+      smallSpacing = maxHeight * 0.001;
+    } else {
+      smallSpacing = maxHeight * 0.02;
+    }
     final imageWidth = maxWidth * 0.8;
     final imageHeight = maxHeight * 0.45;
 
@@ -80,53 +77,52 @@ class _ShareMealPageState extends State<ShareMealPage> {
       backgroundColor: Colors.white,
       body: SafeArea(
         top: true,
-        child: Expanded(
+        child: SingleChildScrollView(
           child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Stack(
-              children: [
-                Container(
-                  width: maxWidth,
-                  height: imageHeight,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/elephant.jpg'),
-                      fit: BoxFit.fill,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    width: maxWidth,
+                    height: imageHeight,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/elephant.jpg'),
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  height: buttonSize,
-                  width: buttonSize,
-                  margin: const EdgeInsets.only(bottom: 350, left: 20),
-                  decoration: BoxDecoration(
-                    color: ColorsPalette.primaryColor,
-                    borderRadius: BorderRadius.circular(buttonSize / 2),
+                  Container(
+                    height: buttonSize,
+                    width: buttonSize,
+                    margin: const EdgeInsets.only(bottom: 350, left: 20),
+                    decoration: BoxDecoration(
+                      color: ColorsPalette.primaryColor,
+                      borderRadius: BorderRadius.circular(buttonSize),
+                    ),
+                    child: IconButton(
+                      color: Colors.white,
+                      icon: const Icon(Icons.arrow_back),
+                      iconSize: buttonSize * 0.5,
+                      onPressed: () {
+                        if (_image == null) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const MyApp()),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const ShareMealPage()),
+                          );
+                        }
+                      },
+                    ),
                   ),
-                  child: IconButton(
-                    color: Colors.white,
-                    icon: const Icon(Icons.arrow_back),
-                    iconSize: buttonSize * 0.7,
-                    onPressed: () {
-                      if (_image == null) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const MyApp()),
-                        );
-                      } else {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const ShareMealPage()),
-                        );
-                      }
-                    },
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Container(
+                ],
+              ),
+              Container(
                 width: maxWidth,
                 height: maxHeight - imageHeight,
                 decoration: const BoxDecoration(
@@ -163,9 +159,8 @@ class _ShareMealPageState extends State<ShareMealPage> {
                   ],
                 ),
               ),
-            ),
-          ],
-            ),
+            ],
+          ),
         ),
       ),
     );

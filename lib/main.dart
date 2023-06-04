@@ -1,8 +1,7 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:foodie/Screens/HomeScreen.dart';
-import 'package:foodie/Screens/takePicture.dart';
+import 'package:foodie/Screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
