@@ -149,7 +149,7 @@ class _ShareMealPageState extends State<ShareMealPage> {
                       ),
                     if (_image != null)
                       Text(
-                        MealPrompts.clickMealPrompt,
+                        MealPrompts.confirmMealPrompt,
                         style: MealPrompts.getPromptTextStyle(context),
                       ),
                     SizedBox(height: smallSpacing),
